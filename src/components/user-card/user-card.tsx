@@ -97,7 +97,7 @@ const UserCard = ({
   VariantProps<typeof userCardVariants>) => {
   return (
     <article
-      className={`${cn("mx-auto w-[75%] space-y-400 rounded-md p-400", userCardVariants({ variant }), className)}`}
+      className={`${cn("mx-auto w-[81.4%] space-y-400 rounded-md p-400", userCardVariants({ variant }), className)}`}
     >
       {children}
       {/* User */}
@@ -113,12 +113,10 @@ const UserCard = ({
         </div>
       </div>
       {/* タイトル */}
-      <h1
-        className={`${cn("text-preset-1 space-y-200", titleVariants({ variant }))}`}
-      >
+      <h1 className={`text-preset-1 space-y-200 ${titleVariants({ variant })}`}>
         {title}
       </h1>
-      <p className={cn(`text-preset-3`, userParagraphVariants({ variant }))}>
+      <p className={`text-preset-3 ${userParagraphVariants({ variant })}`}>
         {paragraph}
       </p>
     </article>

@@ -14,13 +14,12 @@ export default function Home() {
     "fifth",
   ];
   return (
+    // z-indexで、image が背景に隠れてしまた。
     <main>
       <div className="grid gap-400">
         {USERS.map((user, i) => (
           <UserCard key={i} {...user} variant={color[i]} className="relative">
-            {i === 0 && (
-              <Image src={BgIcon} alt="" className="absolute -z-10" />
-            )}
+            {i === 0 && <Image src={BgIcon} alt="" className="absolute z-10" />}
           </UserCard>
         ))}
       </div>
