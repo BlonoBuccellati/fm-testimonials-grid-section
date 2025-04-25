@@ -10,7 +10,7 @@ interface UserCardWithColorProps extends UserCardProps {
   bgIcon?: string | StaticImport;
 }
 const UserCard = ({
-  icon,
+  avatar,
   name,
   userState,
   title,
@@ -19,17 +19,25 @@ const UserCard = ({
   children,
 }: PropsWithChildren<UserCardWithColorProps>) => {
   return (
-    <article className={`${color}`}>
+    <article
+      className={`${color} mx-auto w-[75%] space-y-400 rounded-md bg-red-300 p-400`}
+    >
       {children}
       {/* User */}
-      <div>
-        <Image src={icon} alt="user icon" />
-        <div>{name}</div>
-        <div>{userState}</div>
+      <div className="text-preset-2 flex items-center justify-start gap-200">
+        <Image
+          src={avatar}
+          alt="user avatar"
+          className="max-w-[28px] rounded-full border-3 border-amber-500"
+        />
+        <div className="space-y-50">
+          <div className="">{name}</div>
+          <div>{userState}</div>
+        </div>
       </div>
       {/* タイトル */}
-      <h1>{title}</h1>
-      <p>{paragraph}</p>
+      <h1 className="text-preset-1 space-y-200">{title}</h1>
+      <p className="text-preset-3">{paragraph}</p>
     </article>
   );
 };

@@ -6,15 +6,17 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main>
-      {USERS.map((user, i) => (
-        <div key={i}>
-          <UserCard {...user} className={`relative`}>
-            {i === 0 && (
-              <Image src={BgIcon} alt="" className="absolute -z-10" />
-            )}
-          </UserCard>
-        </div>
-      ))}
+      <div className="grid gap-400">
+        {USERS.map((user, i) => (
+          <div key={i}>
+            <UserCard {...user} className={`relative`}>
+              {i === 0 && (
+                <Image src={BgIcon} alt="" className="absolute -z-10" />
+              )}
+            </UserCard>
+          </div>
+        ))}
+      </div>
     </main>
   );
 }
