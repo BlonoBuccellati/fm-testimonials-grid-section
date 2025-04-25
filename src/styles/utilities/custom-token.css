@@ -37,4 +37,5 @@
   --spacing-300: 24px;
   --spacing-400: 32px;
   --spacing-500: 40px;
+  --spacing-base: var(--spacing-size-base);
 }
