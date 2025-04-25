@@ -7,3 +7,4 @@ export interface UserCardProps {
   title: string;
   paragraph: string;
 }
+export type UserCardTheme = "first" | "second" | "third" | "fourth" | "fifth";

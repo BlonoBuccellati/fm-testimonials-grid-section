@@ -10,7 +10,7 @@ export const USERS: UserCardProps[] = [
   {
     avatar: imageDaniel,
     name: "Daniel Clifford",
-    userState: "Verfied Graduate",
+    userState: "Verified Graduate",
     title:
       "I received a job offer mid-course, and the subjects I learned were current, if not more so, in the company I joined. I honestly feel I got every penny’s worth.",
     paragraph:
@@ -19,7 +19,7 @@ export const USERS: UserCardProps[] = [
   {
     avatar: imageJonathan,
     name: "Jonathan Walters",
-    userState: "Verfied Graduate",
+    userState: "Verified Graduate",
     title: "The team was very supportive and kept me motivated",
     paragraph:
       "“ I started as a total newbie with virtually no coding skills. I now work as a mobile engineer for a big company. This was one of the best investments I’ve made in myself. “",
@@ -27,7 +27,7 @@ export const USERS: UserCardProps[] = [
   {
     avatar: imageJeanette,
     name: "Jeanette Harmon",
-    userState: "Verfied Graduate",
+    userState: "Verified Graduate",
     title: "An overall wonderful and rewarding experience",
     paragraph:
       "“ Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living while doing something I love. ”",

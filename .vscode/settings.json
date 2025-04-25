@@ -1,0 +1,14 @@
+{
+  // 文字列内での補完を有効に
+  "editor.quickSuggestions": { "strings": true },
+
+  // 任意の prop 名をクラス属性として扱う
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "bgColor",
+    "textColor",
+    "avatarBorderColor"
+  ]
+}
