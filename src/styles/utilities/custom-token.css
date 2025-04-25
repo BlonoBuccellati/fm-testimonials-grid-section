@@ -1,0 +1,40 @@
+@theme inline {
+  /* Utilityの作成 */
+  --font-barlowSemi: var(--font-barlow-semi-condensed);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  /* カラー */
+  --color-gray-*: initial;
+  --color-gray-500: var(--gray-500);
+  --color-gray-400: var(--gray-400);
+  --color-gray-300: var(--gray-300);
+  --color-gray-200: var(--gray-200);
+  --color-gray-100: var(--gray-100);
+  --color-white: var(--white);
+  --color-primary-50: var(--primary-50);
+  --color-primary-300: var(--primary-300);
+  --color-primary-500: var(--primary-500);
+}
+
+@theme {
+  /* デフォルトのブレークポイント、フォントウェイトを全てリセット
+  ブレークポイントの設定 */
+  --breakpoint-*: initial;
+  --breakpoint-mobile: 375px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1440px;
+  /* タイポグラフィー */
+  --font-weight-*: initial;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* スペーシング */
+  --spacing-*: initial;
+  --spacing-50: 4px;
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+}

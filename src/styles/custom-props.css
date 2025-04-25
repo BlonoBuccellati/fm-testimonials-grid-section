@@ -1,0 +1,19 @@
+:root {
+  --background: #f6f5f6;
+  --foreground: #171717;
+  /* CUBE CSSにおけるGlobal CSS */
+  /* カラー */
+  --primary-50: hsl(260, 100%, 95%);
+  --primary-300: hsl(264, 82%, 80%);
+  --primary-500: hsl(263, 55%, 52%);
+  --black: #121212;
+  --dark-blue: #19202d;
+  --gray-500: hsl(217, 19%, 35%);
+  --gray-400: hsl(224, 10%, 45%);
+  --gray-300: hsl(0, 0%, 81%);
+  --gray-200: hsl(0, 0%, 81%);
+  --gray-100: hsl(214, 17%, 92%);
+  --white: hsl(0, 0%, 100%);
+  /* スペース */
+  --spacing-size-base: clamp(73px, 1rem + 8vw, 229px);
+}
