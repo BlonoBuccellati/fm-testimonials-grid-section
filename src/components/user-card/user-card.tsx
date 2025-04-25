@@ -3,6 +3,7 @@ import { PropsWithChildren } from "react";
 import { UserCardProps } from "@/types/user-card";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
+import { cn } from "clsx-for-tailwind";
 
 // TODO: 分割代入して渡しると、または（かつ）、extendsだと渡していないプロパティがエラー検出してくれない.調べる。
 interface UserCardWithColorProps extends UserCardProps {
@@ -20,7 +21,7 @@ const UserCard = ({
 }: PropsWithChildren<UserCardWithColorProps>) => {
   return (
     <article
-      className={`${color} mx-auto w-[75%] space-y-400 rounded-md bg-red-300 p-400`}
+      className={`(${cn("mx-auto w-[75%] space-y-400 rounded-md bg-red-300 p-400", color)} `}
     >
       {children}
       {/* User */}
