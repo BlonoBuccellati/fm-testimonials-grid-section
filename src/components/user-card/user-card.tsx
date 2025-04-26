@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import { cn } from "clsx-for-tailwind";
+import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import Image from "next/image";
 
@@ -97,7 +97,7 @@ const UserCard = ({
   VariantProps<typeof userCardVariants>) => {
   return (
     <article
-      className={`${cn("mx-auto w-[81.4%] space-y-400 rounded-md p-400", userCardVariants({ variant }), className)}`}
+      className={`${cn("space-y-400 rounded-md p-400", userCardVariants({ variant }), className)}`}
     >
       {children}
       {/* User */}
