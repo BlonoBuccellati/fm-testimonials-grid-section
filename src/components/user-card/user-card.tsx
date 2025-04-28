@@ -1,25 +1,19 @@
 import { PropsWithChildren } from "react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
-import Image from "next/image";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  userCardVariants,
+} from "@/components/ui/card";
 
 import { UserCardProps, UserCardTheme } from "@/types/user-card";
+import { AvatarImage, Avatar, AvatarFallback } from "@/components/ui/avatar";
 
-const userCardVariants = cva("", {
-  variants: {
-    variant: {
-      first: "bg-primary-500 text-white",
-      second: "bg-gray-500 text-white",
-      third: "bg-white text-gray-500",
-      fourth: "bg-dark-blue text-white",
-      fifth: "bg-white text-gray-500",
-    } satisfies Record<UserCardTheme, string>,
-  },
-  defaultVariants: {
-    variant: "first",
-  },
-});
 const userStateVariants = cva("", {
   variants: {
     variant: {
@@ -35,56 +29,12 @@ const userStateVariants = cva("", {
   },
 });
 
-const avatarVariants = cva("border", {
-  variants: {
-    variant: {
-      first: "border-[#A775F1]",
-      second: "",
-      third: "",
-      fourth: "border-[#A775F1]",
-      fifth: "",
-    } satisfies Record<UserCardTheme, string>,
-  },
-  defaultVariants: {
-    variant: "first",
-  },
-});
-
-const titleVariants = cva("", {
-  variants: {
-    variant: {
-      first: "",
-      second: "",
-      third: "",
-      fourth: "text-gray-200",
-      fifth: "",
-    } satisfies Record<UserCardTheme, string>,
-  },
-  defaultVariants: {
-    variant: "first",
-  },
-});
-const userParagraphVariants = cva("", {
-  variants: {
-    variant: {
-      first: "text-primary-50",
-      second: "text-gray-100",
-      third: "text-gray-400",
-      fourth: "text-gray-100",
-      fifth: "text-gray-400",
-    } satisfies Record<UserCardTheme, string>,
-  },
-  defaultVariants: {
-    variant: "first",
-  },
-});
-
 // TODO: 分割代入して渡しると、または（かつ）、extendsだと渡していないプロパティがエラー検出してくれない.調べる。
 interface UserCardWithColorProps extends UserCardProps {
   bgIcon?: string | StaticImport;
   className?: string;
 }
-const UserCard = ({
+function UserCard({
   avatar,
   name,
   userState,
@@ -94,32 +44,50 @@ const UserCard = ({
   children,
   className,
 }: PropsWithChildren<UserCardWithColorProps> &
-  VariantProps<typeof userCardVariants>) => {
+  VariantProps<typeof userCardVariants>) {
   return (
-    <article
-      className={`${cn("space-y-400 rounded-md p-400", userCardVariants({ variant }), className)}`}
+    <Card
+      variant={variant}
+      className={`${cn("space-y-400 rounded-md p-400", className)}`}
     >
+      {/* svg ここで位置はいいのか？？？？ */}
       {children}
       {/* User */}
-      <div className="text-preset-2 flex items-center justify-start gap-200">
-        <Image
-          src={avatar}
-          alt="user avatar"
-          className={`${cn("max-w-[28px] rounded-full border-3", avatarVariants({ variant }))}`}
-        />
-        <div className="space-y-50">
-          <div className="">{name}</div>
-          <div className={`${userStateVariants({ variant })}`}>{userState}</div>
-        </div>
+      <CardHeader>
+        <Avatar variant={variant}>
+          <AvatarImage src={avatar} alt="user avatar" />
+          <AvatarFallback>USER</AvatarFallback>
+        </Avatar>
+        <UserInfo userName={name} userState={userState} variant={variant} />
+      </CardHeader>
+      <CardTitle>{title}</CardTitle>
+      <CardContent variant={variant}>{paragraph}</CardContent>
+    </Card>
+  );
+}
+
+interface UserInfoProps {
+  className?: string;
+  userName: string;
+  userState: string;
+}
+
+const UserInfo = ({
+  className,
+  userName,
+  userState,
+  variant,
+}: UserInfoProps & VariantProps<typeof userCardVariants>) => {
+  return (
+    <div className={cn("space-y-50", className)}>
+      <div>{userName}</div>
+      <div
+        data-slot="card-user-status"
+        className={`${userStateVariants({ variant })}`}
+      >
+        {userState}
       </div>
-      {/* タイトル */}
-      <h1 className={`text-preset-1 space-y-200 ${titleVariants({ variant })}`}>
-        {title}
-      </h1>
-      <p className={`text-preset-3 ${userParagraphVariants({ variant })}`}>
-        {paragraph}
-      </p>
-    </article>
+    </div>
   );
 };
 
