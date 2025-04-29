@@ -46,10 +46,7 @@ function UserCard({
 }: PropsWithChildren<UserCardWithColorProps> &
   VariantProps<typeof userCardVariants>) {
   return (
-    <Card
-      variant={variant}
-      className={`${cn("space-y-200 rounded-md p-400", className)}`}
-    >
+    <Card variant={variant} className={className}>
       {/* svg ここで位置はいいのか？？？？ */}
       {children}
       {/* User */}

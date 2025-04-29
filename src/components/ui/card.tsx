@@ -54,7 +54,7 @@ function Card({
     <article
       data-slot="card"
       className={cn(
-        "space-y-400 rounded-md p-400",
+        "space-y-200 rounded-md p-400",
         userCardVariants({ variant }),
         className,
       )}
