@@ -48,7 +48,7 @@ function UserCard({
   return (
     <Card
       variant={variant}
-      className={`${cn("space-y-400 rounded-md p-400", className)}`}
+      className={`${cn("space-y-200 rounded-md p-400", className)}`}
     >
       {/* svg ここで位置はいいのか？？？？ */}
       {children}

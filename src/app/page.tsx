@@ -1,4 +1,4 @@
-import UserCard from "@/components/user-card/user-card";
+import UserCard from "@/features/user/components/user-card";
 import { USERS } from "@/constants/users";
 import BgIcon from "@/assets/bg-pattern-quotation.svg";
 import Image from "next/image";
@@ -26,7 +26,7 @@ export default function Home() {
               variant={color[i]}
               className={cn(
                 "tablet:h-full relative w-full",
-                i === 0 && "tablet:col-span-2",
+                i === 0 && "tablet:col-span-2 -z-20",
                 i === 1 && "tablet:col-span-1",
                 i === 2 && "tablet:col-span-1",
                 i === 3 && "tablet:col-span-2",
@@ -35,7 +35,11 @@ export default function Home() {
               )}
             >
               {i === 0 && (
-                <Image src={BgIcon} alt="" className="absolute z-10" />
+                <Image
+                  src={BgIcon}
+                  alt=""
+                  className="tablet:block absolute top-[0%] left-[clamp(50%,90%-6rem,77%)] -z-10 hidden -translate-x-1/2"
+                />
               )}
             </UserCard>
           ))}
