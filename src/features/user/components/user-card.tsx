@@ -77,10 +77,10 @@ const UserInfo = ({
 }: UserInfoProps & VariantProps<typeof userCardVariants>) => {
   return (
     <div className={cn("space-y-50", className)}>
-      <div>{userName}</div>
+      <div className="typo-preset-2">{userName}</div>
       <div
         data-slot="card-user-status"
-        className={`${userStateVariants({ variant })}`}
+        className={cn("typo-preset-4", userStateVariants({ variant }))}
       >
         {userState}
       </div>
