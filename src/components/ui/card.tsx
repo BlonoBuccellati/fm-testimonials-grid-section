@@ -54,7 +54,7 @@ function Card({
     <article
       data-slot="card"
       className={cn(
-        "space-y-200 rounded-md p-400",
+        "space-y-200 rounded-md p-400 drop-shadow-[30px_30px_45px_rgba(0,0,0,0.2)]",
         userCardVariants({ variant }),
         className,
       )}

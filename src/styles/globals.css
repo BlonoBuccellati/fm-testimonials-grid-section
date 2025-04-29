@@ -6,6 +6,6 @@
 body {
   /* background: var(--background); */
   @apply bg-background text-gray-400;
-  @apply my-base font-medium;
+  @apply my-base-fixed tablet:my-base font-medium;
   font-family: var(--font-barlow-semi-condensed), Arial, Helvetica, sans-serif;
 }

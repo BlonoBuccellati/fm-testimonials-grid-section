@@ -15,5 +15,6 @@
   --gray-100: hsl(214, 17%, 92%);
   --white: hsl(0, 0%, 100%);
   /* スペース */
-  --spacing-size-base: clamp(73px, 1rem + 8vw, 229px);
+  --spacing-size-base: clamp(73px, 1rem + 15vw, 229px);
+  --spacing-size-base-fixed: 73px;
 }
