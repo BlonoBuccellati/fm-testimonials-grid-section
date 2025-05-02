@@ -19,11 +19,9 @@ const UserCardList = () => {
           className={cn(
             "tablet:h-full relative w-full",
             i === 0 && "tablet:col-span-2 -z-20",
-            i === 1 && "tablet:col-span-1",
-            i === 2 && "tablet:col-span-1",
             i === 3 && "tablet:col-span-2",
             i === 4 &&
-              "tablet:col-span-2 desktop:row-span-2 desktop:col-start-4 desktop:row-start-1",
+              "tablet:max-desktop:col-span-2 desktop:row-span-2 desktop:col-start-4 desktop:row-start-1",
           )}
         >
           {i === 0 && (
