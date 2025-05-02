@@ -58,7 +58,12 @@ function UserCard({
         <UserInfo userName={name} userState={userState} variant={variant} />
       </CardHeader>
       <CardTitle>{title}</CardTitle>
-      <CardContent variant={variant}>{paragraph}</CardContent>
+      <CardContent
+        variant={variant}
+        className='before:content-["\""] after:content-["\""]'
+      >
+        {paragraph}
+      </CardContent>
     </Card>
   );
 }
